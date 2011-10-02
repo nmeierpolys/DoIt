@@ -1,6 +1,5 @@
 <?php
-	require_once('db.php');
-	require_once('functionlib.php');
+	require_once('includes.php');
 	startSession();	
 	if(isset($_SESSION["popLogin"])){
 		echo '<script> popup_show(); </script>';	
@@ -41,7 +40,6 @@
         </div>
     </div>
     <div id="outerFooter"><?php showOuterFooter(); ?></div>
-	<div id="test"></div>
 </body>
 </html>
 	

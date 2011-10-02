@@ -1,5 +1,5 @@
 <?php
-	require_once('../db.php');
+	require_once('../model/db.php');
 	require_once('../functionlib.php');
 	
 	if(beforeRunFunctions()) { exit; }	
@@ -46,7 +46,7 @@ Phasellus dignissim ornare nisl in commodo. Donec id libero et est tempor molest
           <tr>
             <div id="innerFooter">
                 <?php 
-                   include('../footer.php');
+                   include('../view/footer.php');
                 ?>
             </div>
           </tr>

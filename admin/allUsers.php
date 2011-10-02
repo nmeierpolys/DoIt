@@ -1,5 +1,5 @@
 <?php 
-require_once("../db.php");
+require_once("../model/db.php");
 ?>
 <h2>All Users</h2>
 <?php

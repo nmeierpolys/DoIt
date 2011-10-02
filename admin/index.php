@@ -1,5 +1,5 @@
 <?php
-	require_once('../db.php');
+	require_once('../model/db.php');
 	require_once('../functionlib.php'); 
 	if(!isUserIPAllowed($safeIPs)) { 
 		echo 'User IP is disallowed.';

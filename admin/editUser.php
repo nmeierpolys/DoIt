@@ -1,6 +1,6 @@
 <?php 
-require_once("../db.php");
-require_once("../user.php");
+require_once("../model/db.php");
+require_once("../model/user.php");
 ?>
 
 <h2>Edit User</h2>
