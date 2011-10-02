@@ -1,0 +1,9 @@
+Change Log 
+	
+0.5b.0.2
+	- minor GUI fixes, added redirect index.html, 
+	  added feedback form to manual
+0.5b.0.1
+	- minor release - fixed download header bug
+0.5b
+	- first release

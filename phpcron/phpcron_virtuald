@@ -1,0 +1,15 @@
+
+#!/bin/bash
+#This is a simple script which is meant to be placed on your crontab for
+#invoking phpcron.php. 
+
+#Make sure this path points to your phpcron.php script
+PHPCRON_DIRECTORY=$PWD;
+#Make sure this path points to your php executable
+PHP_PATH="/usr/local/bin/php";
+ 
+if [ -e $PHPCRON_DIRECTORY/phpcron_venabled ]
+then
+        cd $PHPCRON_DIRECTORY
+        $PHP_PATH $PHPCRON_DIRECTORY/phpcron.php --daemon-off -r $PHPCRON_DIRECTORY/phpcron_output >> /dev/null
+fi    

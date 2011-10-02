@@ -1,0 +1,5 @@
+#!/bin/bash 
+
+#David Druffner 
+#Wrapper for phpcron.php
+php ./phpcron.php $*

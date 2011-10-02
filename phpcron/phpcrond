@@ -1,0 +1,24 @@
+ #!/bin/bash
+# The above line should contain your path to your shell.
+# David Druffner Copyright(C) 2001, modified BSD License (see phpcron_manual and LICENSE.txt)
+# Wrapper for phpcron.php when in daemon mode
+
+if [ ! -x ./phpcron.php ] 
+then
+	echo -e "\a\r\n
+PHPCROND FATAL ERROR: 
+Cannot execute phpcron.php:  phpcron.php must exist in the same directory as the phpcrond shell script and
+                             be executable. 
+Please fix and try again.
+Program Terminated.\r\n ";
+	exit;
+fi
+
+
+# Start phpcron
+
+#This doesn't do anything except display the options that are going to be run
+ php ./phpcron.php -o $* 
+#This actually starts the daemon
+ php ./phpcron.php --daemon $*  >> /dev/null &
+ 
