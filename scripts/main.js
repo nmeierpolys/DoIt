@@ -2,7 +2,23 @@ function popup_show(id)
 	{
 	}
 	
-$(function(){
+$(function(){	
+	$('.ajax-link').click( function() {
+		var href = $(this).attr('href');
+		var start = href.indexOf('?');
+		var end = href.length;
+		var params = href.substring(start+1,end);
+		alert(params);
+		$.ajax({
+			url: "content.php",
+  			context: document.body,
+			data: params,
+			success: function(html){
+				$("#bodyContent").html(html);
+			}
+		});
+		return false;
+	});
 	
 	$('#loginButton').click(function(e){
 		var element = '#popup'
@@ -16,6 +32,7 @@ $(function(){
 		} else {
 			$(element).hide('slow');
 		}
+		
 		//.show('slow');
 		//.css('visibility',"visible");
 		//$('loginForm').show('slow');

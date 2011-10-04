@@ -1,19 +1,21 @@
 <?php
-	require_once('includes.php');
-	startSession();	
-	if(isset($_SESSION["popLogin"])){
-		echo '<script> popup_show(); </script>';	
-	}
-		
+
+require_once('includes.php');
+startSession();		
 ?>
 
 <?php 
-	include('header.php'); 
-	if(beforeRunFunctions()) { exit; };
+
+include('header.php'); 
+if(beforeRunFunctions()) { exit; };
+if(isset($_GET)){
+	$_SESSION['GET'] = $_GET;
+}
 ?>
 
 
 <body>
+	<div id="results"></div>
     <div id="outerHeader">&nbsp;</div>
 	<div id="main">
     <div id="leftMargin">
@@ -32,7 +34,7 @@
         </div>
         <div id="bodyContent">
             <?php 
-				showContent(); 
+				//showContent(); 
 			?>
         </div>
         <div id="innerFooter">
