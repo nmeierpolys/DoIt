@@ -1,44 +1,40 @@
-function popup_show(id)
-	{
-	}
-	
+function ajaxLink(href){
+	var start = href.indexOf('?');
+	var end = href.length;
+	var params = href.substring(start+1,end);
+	$.ajax({
+		url: "content.php",
+		context: document.body,
+		data: params,
+		success: function(html){
+			$("#bodyContent").html(html);
+		}
+	});
+}
+
 $(function(){	
-	$('.ajax-link').click( function() {
+		
+	$('#loginButton').click(function(e){
+		var element = '#popup'
+		$(element).css("position","absolute");
+		$(element).css("bottom",563);
+		$(element).css("left",10);
+		if($(element).css("display") == "none"){
+			$(element).slideDown();
+		} else {
+			$(element).slideUp();
+		}
+	});
+	
+	$('.ajax a').click( function() {
 		var href = $(this).attr('href');
-		var start = href.indexOf('?');
-		var end = href.length;
-		var params = href.substring(start+1,end);
-		alert(params);
-		$.ajax({
-			url: "content.php",
-  			context: document.body,
-			data: params,
-			success: function(html){
-				$("#bodyContent").html(html);
-			}
-		});
+		ajaxLink(href);
 		return false;
 	});
 	
-	$('#loginButton').click(function(e){
-		var element = '#popup'
-		var x = e.pageX+15;
-		var y = e.pageY;
-		$(element).css("position","absolute");
-		$(element).css("top",y);
-		$(element).css("left",x);
-		if($(element).css("display") == "none"){
-			$(element).show('slow');
-		} else {
-			$(element).hide('slow');
-		}
-		
-		//.show('slow');
-		//.css('visibility',"visible");
-		//$('loginForm').show('slow');
-	});
-	
-	$('#test').click(function(){
-		$(this).hide('slow');
+	$('.ajax-link').click( function() {
+		var href = $(this).attr('href');
+		ajaxLink(href);
+		return false;
 	});
 });

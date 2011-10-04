@@ -144,17 +144,20 @@ body {
 	width=800px;
 	overflow-x:scroll;	
 }
-div.sample_popup { z-index: 1; }
-
+div.sample_popup { 
+	z-index: 1;
+}
 div.sample_popup div.menu_form_body
 {
-  width: 200px;
-  border: 1px solid black;
-  background: top left url('http://www.examiner.com/images/blog/wysiwyg/image/yellow(1).png') no-repeat;
+	width: 200px;
+	border: 1px solid black;
+	padding: 3px;
+	background:#B8C6CF;
+	color:#8D7BB9;
 }
-
 div.sample_popup input.field
 {
-  width: 95%;
-  border: 1px solid #808080;
+	padding:0px;
+	width: 95%;
+	border: 1px solid #808080;
 }

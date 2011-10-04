@@ -1,11 +1,9 @@
 <?php
-
 require_once('includes.php');
 startSession();		
 ?>
 
 <?php 
-
 include('header.php'); 
 if(beforeRunFunctions()) { exit; };
 if(isset($_GET)){
@@ -13,9 +11,7 @@ if(isset($_GET)){
 }
 ?>
 
-
 <body>
-	<div id="results"></div>
     <div id="outerHeader">&nbsp;</div>
 	<div id="main">
     <div id="leftMargin">
@@ -28,13 +24,13 @@ if(isset($_GET)){
     <div id="banner">
         <?php showBanner(); ?>
     </div>
-    <div id="content">
+    <div id="content" class="ajax">
         <div id="topToolbar">
             <?php showTopToolbar(); ?>
         </div>
         <div id="bodyContent">
             <?php 
-				//showContent(); 
+				showContent(); 
 			?>
         </div>
         <div id="innerFooter">
