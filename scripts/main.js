@@ -8,31 +8,35 @@ function ajaxLink(href){
 		data: params,
 		success: function(html){
 			$("#bodyContent").html(html);
+     		window.history.pushState({"html":html,"pageTitle":document.title},"", href);
 		}
 	});
+	
 }
 
 $(function(){	
 		
 	$('#loginButton').click(function(e){
 		var element = '#popup'
+		$('#bodyContent').prepend($(element));
 		$(element).css("position","absolute");
-		$(element).css("bottom",563);
-		$(element).css("left",10);
+		$(element).css("top",2);
+		$(element).css("left",2);
 		if($(element).css("display") == "none"){
-			$(element).slideDown();
+			$(element).slideToggle('fast');
 		} else {
-			$(element).slideUp();
+			$(element).slideToggle('fast');
 		}
+		$('#username').first().focus();
 	});
 	
-	$('.ajax a').click( function() {
+	$('.ajax-link').live('click', function(e){
 		var href = $(this).attr('href');
 		ajaxLink(href);
 		return false;
 	});
 	
-	$('.ajax-link').click( function() {
+	$('.ajax a').live('click', function(e){
 		var href = $(this).attr('href');
 		ajaxLink(href);
 		return false;

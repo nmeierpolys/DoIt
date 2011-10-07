@@ -4,7 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Test Site</title>
 <style type="text/css">@import url('styles/main.css');</style>
-<link rel="stylesheet" type="text/css" href="styles/sample.css" />
 <script type="text/javascript" src="scripts/popup-window.js"></script></script>
 <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
